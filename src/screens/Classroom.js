@@ -156,7 +156,6 @@ class Classroom extends Component {
 
     // This function runs before render || PREDEFINED
     componentWillMount = async () => {
-
         // LOADS DATA ONCE, THEN LISTENS FOR CHANGES
         await firebase.database().ref('students')
         .on('value', async()=>{
@@ -172,16 +171,6 @@ class Classroom extends Component {
 
     componentDidMount = async () => {
         console.log("INSIDE: COMPONENT DID MOUNT");
-
-
-        // CHANGES LISTENER
-        // await firebase.database().ref('students')
-        // .on('child_changed', async()=>{
-        //     console.log('DATA CHANGED');
-        //     await this.loadStudents();
-        //     this.CalculateColors();
-        //     this.AverageColor();
-        // });
 
     }
 
@@ -212,7 +201,6 @@ const DismissKeyboard = ({children}) => (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
         {children}
     </TouchableWithoutFeedback>
-
 );
 
 const styles = StyleSheet.create({
